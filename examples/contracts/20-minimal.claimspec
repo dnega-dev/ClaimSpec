@@ -1,0 +1,6 @@
+claimspec 1.0
+name "minimal-citation-check"
+description "Smallest useful factual-claim citation contract"
+
+require factual_claims_cited
+require citations_resolve

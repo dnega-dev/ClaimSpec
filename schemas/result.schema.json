@@ -1,0 +1,101 @@
+{
+  "$id": "https://claimspec.dev/schema/1.0/result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "details": {
+            "type": "object"
+          },
+          "message": {
+            "type": "string"
+          },
+          "rule": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "subjects": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "rule",
+          "status",
+          "message",
+          "subjects"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "summary": {
+      "additionalProperties": false,
+      "properties": {
+        "fail": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "pass": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "total": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "pass",
+        "fail",
+        "total"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "contract",
+    "run_id",
+    "passed",
+    "summary",
+    "findings"
+  ],
+  "title": "ClaimSpec evaluation result",
+  "type": "object"
+}

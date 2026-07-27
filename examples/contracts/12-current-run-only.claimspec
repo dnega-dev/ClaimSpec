@@ -1,0 +1,6 @@
+claimspec 1.0
+name "current-run-only"
+description "Rejects evidence access inherited from an earlier run"
+
+require sources_accessed_current_run cited_only=false
+require retrieval_results min_count=1

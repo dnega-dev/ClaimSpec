@@ -1,0 +1,13 @@
+claimspec 1.0
+name "financial-filings"
+description "Checks numerical claims against current primary filing text"
+
+require min_sources count=2 cited_only=true
+require min_primary_sources count=1 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require quantitative_values_in_evidence normalize_whitespace=true
+require sources_accessed_current_run
+require source_domain_allowlist allow=sec.gov
+require contradiction_search_high_risk
+require no_completion_without_core_retrieval

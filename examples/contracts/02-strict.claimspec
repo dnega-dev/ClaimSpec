@@ -1,0 +1,16 @@
+claimspec 1.0
+name "strict-research"
+description "High-assurance checks with multiple sources and primary evidence"
+
+require min_sources count=3 cited_only=true
+require min_primary_sources count=2 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require quotes_verbatim
+require quantitative_values_in_evidence
+require sources_accessed_current_run cited_only=true
+require retrieval_results min_count=3
+require unsupported_claims_labeled_or_removed
+require uncertainty_reason
+require contradiction_search_high_risk
+require no_completion_without_core_retrieval min_count=2

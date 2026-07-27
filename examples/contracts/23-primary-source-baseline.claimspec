@@ -1,0 +1,9 @@
+claimspec 1.0
+name "primary-source-baseline"
+description "Requires all counted cited evidence to include two primary sources"
+
+require min_sources count=2 cited_only=true
+require min_primary_sources count=2 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require sources_accessed_current_run

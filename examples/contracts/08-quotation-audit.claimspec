@@ -1,0 +1,7 @@
+claimspec 1.0
+name "quotation-audit"
+description "Checks quote transcription and citation paths"
+
+require citations_resolve
+require quotes_verbatim
+require sources_accessed_current_run

@@ -1,0 +1,9 @@
+claimspec 1.0
+name "government-only"
+description "Restricts cited sources to selected government domains"
+
+require min_sources count=2 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require source_domain_allowlist allow=govinfo.gov,census.gov,data.gov
+require sources_accessed_current_run

@@ -1,0 +1,102 @@
+[
+  {
+    "trace": "traces/invalid/01-uncited-factual-claim.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["factual_claims_cited", "quantitative_values_in_evidence"]
+  },
+  {
+    "trace": "traces/invalid/02-dangling-citation.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["citations_resolve", "quantitative_values_in_evidence"]
+  },
+  {
+    "trace": "traces/invalid/03-missing-citation-source.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["citations_resolve", "quantitative_values_in_evidence"]
+  },
+  {
+    "trace": "traces/invalid/04-nonverbatim-quote.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["quotes_verbatim"]
+  },
+  {
+    "trace": "traces/invalid/05-quantitative-value-absent.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["quantitative_values_in_evidence"]
+  },
+  {
+    "trace": "traces/invalid/06-source-from-prior-run.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["sources_accessed_current_run"]
+  },
+  {
+    "trace": "traces/invalid/07-zero-retrieval-results.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["retrieval_results", "no_completion_without_core_retrieval"]
+  },
+  {
+    "trace": "traces/invalid/08-unsupported-retained.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["unsupported_claims_labeled_or_removed"]
+  },
+  {
+    "trace": "traces/invalid/09-missing-uncertainty-reason.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["uncertainty_reason"]
+  },
+  {
+    "trace": "traces/invalid/10-disallowed-jurisdiction.json",
+    "contract": "contracts/19-jurisdiction-policy.claimspec",
+    "expected_failing_rules": ["jurisdiction_allowlist"]
+  },
+  {
+    "trace": "traces/invalid/11-lookalike-domain.json",
+    "contract": "contracts/18-domain-policy.claimspec",
+    "expected_failing_rules": ["source_domain_allowlist"]
+  },
+  {
+    "trace": "traces/invalid/12-missing-contradiction-search.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["contradiction_search_high_risk"]
+  },
+  {
+    "trace": "traces/invalid/13-completed-without-core-retrieval.json",
+    "contract": "contracts/13-retrieval-gate.claimspec",
+    "expected_failing_rules": ["no_completion_without_core_retrieval"]
+  },
+  {
+    "trace": "traces/invalid/14-too-few-sources.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["min_sources"]
+  },
+  {
+    "trace": "traces/invalid/15-no-primary-source.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["min_primary_sources"]
+  },
+  {
+    "trace": "traces/invalid/16-retrieval-event-from-prior-run.json",
+    "contract": "contracts/13-retrieval-gate.claimspec",
+    "expected_failing_rules": ["retrieval_results", "no_completion_without_core_retrieval"]
+  },
+  {
+    "trace": "traces/invalid/17-failed-source-access.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "expected_failing_rules": ["min_sources", "min_primary_sources", "sources_accessed_current_run"]
+  },
+  {
+    "trace": "traces/invalid/18-no-retrieval-event.json",
+    "contract": "contracts/13-retrieval-gate.claimspec",
+    "expected_failing_rules": ["retrieval_results", "no_completion_without_core_retrieval"]
+  },
+  {
+    "trace": "traces/invalid/19-partial-but-uncited.json",
+    "contract": "contracts/20-minimal.claimspec",
+    "expected_failing_rules": ["factual_claims_cited"]
+  },
+  {
+    "trace": "traces/invalid/20-structural-missing-events.json",
+    "contract": "contracts/01-baseline.claimspec",
+    "schema_error": true
+  }
+]

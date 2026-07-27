@@ -1,0 +1,13 @@
+claimspec 1.0
+name "academic-review"
+description "Trace checks for literature-review summaries"
+
+require min_sources count=4 cited_only=true
+require min_primary_sources count=2 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require quotes_verbatim
+require quantitative_values_in_evidence
+require sources_accessed_current_run
+require retrieval_results min_count=4
+require uncertainty_reason

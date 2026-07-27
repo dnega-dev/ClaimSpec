@@ -1,0 +1,256 @@
+{
+  "$id": "https://claimspec.dev/schema/1.0/contract.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "rules": {
+      "items": {
+        "oneOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cited_only": {
+                "type": "boolean"
+              },
+              "count": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "name": {
+                "const": "min_sources"
+              }
+            },
+            "required": [
+              "name",
+              "count"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cited_only": {
+                "type": "boolean"
+              },
+              "count": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "name": {
+                "const": "min_primary_sources"
+              }
+            },
+            "required": [
+              "name",
+              "count"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "factual_claims_cited"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "citations_resolve"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "quotes_verbatim"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "quantitative_values_in_evidence"
+              },
+              "normalize_whitespace": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "cited_only": {
+                "type": "boolean"
+              },
+              "name": {
+                "const": "sources_accessed_current_run"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "min_count": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "name": {
+                "const": "retrieval_results"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "unsupported_claims_labeled_or_removed"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "uncertainty_reason"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "allow": {
+                "items": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "cited_only": {
+                "type": "boolean"
+              },
+              "name": {
+                "const": "jurisdiction_allowlist"
+              }
+            },
+            "required": [
+              "name",
+              "allow"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "allow": {
+                "items": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "cited_only": {
+                "type": "boolean"
+              },
+              "name": {
+                "const": "source_domain_allowlist"
+              }
+            },
+            "required": [
+              "name",
+              "allow"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "const": "contradiction_search_high_risk"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "min_count": {
+                "minimum": 1,
+                "type": "integer"
+              },
+              "name": {
+                "const": "no_completion_without_core_retrieval"
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "type": "object"
+          }
+        ]
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "version": {
+      "const": "1.0"
+    }
+  },
+  "required": [
+    "version",
+    "name",
+    "rules"
+  ],
+  "title": "ClaimSpec JSON contract",
+  "type": "object"
+}

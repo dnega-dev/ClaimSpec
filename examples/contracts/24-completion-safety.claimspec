@@ -1,0 +1,8 @@
+claimspec 1.0
+name "completion-safety"
+description "Completion and unsupported-claim safety gates"
+
+require retrieval_results min_count=2
+require unsupported_claims_labeled_or_removed
+require uncertainty_reason
+require no_completion_without_core_retrieval min_count=2

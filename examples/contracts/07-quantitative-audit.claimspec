@@ -1,0 +1,8 @@
+claimspec 1.0
+name "quantitative-audit"
+description "Literal evidence-presence checks for declared values"
+
+require factual_claims_cited
+require citations_resolve
+require quantitative_values_in_evidence normalize_whitespace=true
+require sources_accessed_current_run

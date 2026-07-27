@@ -1,0 +1,6 @@
+claimspec 1.0
+name "unsupported-claims"
+description "Prevents silently retaining unsupported factual claims"
+
+require unsupported_claims_labeled_or_removed
+require uncertainty_reason

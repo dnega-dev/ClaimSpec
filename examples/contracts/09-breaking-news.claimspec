@@ -1,0 +1,14 @@
+claimspec 1.0
+name "breaking-news"
+description "Multi-source current-run checks for fast-moving claims"
+
+require min_sources count=3 cited_only=true
+require min_primary_sources count=1 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require sources_accessed_current_run
+require retrieval_results min_count=3
+require unsupported_claims_labeled_or_removed
+require uncertainty_reason
+require contradiction_search_high_risk
+require no_completion_without_core_retrieval

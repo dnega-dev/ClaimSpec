@@ -1,0 +1,6 @@
+claimspec 1.0
+name "retrieval-gate"
+description "Requires non-empty retrieval before a run may complete"
+
+require retrieval_results min_count=1
+require no_completion_without_core_retrieval min_count=1

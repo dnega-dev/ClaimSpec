@@ -1,0 +1,332 @@
+{
+  "$id": "https://claimspec.dev/schema/1.0/trace.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "citations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "source_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source_id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "claims": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "action": {
+            "enum": [
+              "retained",
+              "labeled",
+              "removed"
+            ]
+          },
+          "citations": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "factual",
+              "opinion",
+              "instruction"
+            ]
+          },
+          "quantitative_values": {
+            "items": {
+              "oneOf": [
+                {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "additionalProperties": false,
+                  "properties": {
+                    "unit": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "oneOf": [
+                        {
+                          "minLength": 1,
+                          "type": "string"
+                        },
+                        {
+                          "type": "number"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "risk": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "support": {
+            "enum": [
+              "supported",
+              "unsupported",
+              "uncertain"
+            ]
+          },
+          "text": {
+            "type": "string"
+          },
+          "uncertainty_reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "kind",
+          "support",
+          "action",
+          "citations"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "events": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "core": {
+            "type": "boolean"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "occurred_at": {
+            "format": "date-time",
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "result_count": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "run_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "success",
+              "failed"
+            ]
+          },
+          "type": {
+            "enum": [
+              "retrieval",
+              "contradiction_search"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "run_id",
+          "status",
+          "occurred_at"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "output": {
+      "additionalProperties": false,
+      "properties": {
+        "completion_status": {
+          "enum": [
+            "completed",
+            "partial",
+            "aborted",
+            "refused"
+          ]
+        },
+        "text": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "completion_status"
+      ],
+      "type": "object"
+    },
+    "quotes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "source_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "text": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "source_id",
+          "text"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "run": {
+      "additionalProperties": false,
+      "properties": {
+        "ended_at": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "started_at": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "started_at"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "1.0"
+    },
+    "sources": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "access": {
+            "additionalProperties": false,
+            "properties": {
+              "accessed_at": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "run_id": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "success",
+                  "failed"
+                ]
+              }
+            },
+            "required": [
+              "run_id",
+              "status",
+              "accessed_at"
+            ],
+            "type": "object"
+          },
+          "fetched_text": {
+            "type": "string"
+          },
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "jurisdiction": {
+            "type": "string"
+          },
+          "source_type": {
+            "enum": [
+              "primary",
+              "secondary",
+              "unknown"
+            ]
+          },
+          "url": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "url",
+          "source_type",
+          "access",
+          "fetched_text"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "run",
+    "output",
+    "claims",
+    "citations",
+    "sources",
+    "quotes",
+    "events"
+  ],
+  "title": "ClaimSpec grounding trace",
+  "type": "object"
+}
