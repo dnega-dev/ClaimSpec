@@ -1,0 +1,13 @@
+claimspec 1.0
+name "eu-policy"
+description "European Union policy research restricted to declared jurisdictions"
+
+require min_sources count=2
+require min_primary_sources count=1
+require factual_claims_cited
+require citations_resolve
+require jurisdiction_allowlist allow=EU,EU-DE,EU-FR
+require source_domain_allowlist allow=europa.eu,eur-lex.europa.eu
+require sources_accessed_current_run
+require retrieval_results min_count=2
+require no_completion_without_core_retrieval

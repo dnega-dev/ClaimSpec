@@ -1,0 +1,14 @@
+claimspec 1.0
+name "us-legal-research"
+description "Jurisdiction-restricted checks for United States legal research"
+
+require min_sources count=2 cited_only=true
+require min_primary_sources count=1 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require quotes_verbatim
+require sources_accessed_current_run
+require jurisdiction_allowlist allow=US,US-CA,US-NY
+require source_domain_allowlist allow=supremecourt.gov,congress.gov,govinfo.gov
+require contradiction_search_high_risk
+require uncertainty_reason

@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "name": "public-records-json",
+  "description": "JSON form of a public-records grounding contract",
+  "rules": [
+    {"name": "min_sources", "count": 2, "cited_only": true},
+    {"name": "min_primary_sources", "count": 1, "cited_only": true},
+    {"name": "factual_claims_cited"},
+    {"name": "citations_resolve"},
+    {"name": "quotes_verbatim"},
+    {"name": "sources_accessed_current_run"},
+    {"name": "source_domain_allowlist", "allow": ["archives.gov", "govinfo.gov"]},
+    {"name": "no_completion_without_core_retrieval"}
+  ]
+}

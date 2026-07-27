@@ -1,0 +1,9 @@
+claimspec 1.0
+name "high-risk-claims"
+description "Requires challenge searches for every retained high-risk claim"
+
+require factual_claims_cited
+require citations_resolve
+require contradiction_search_high_risk
+require uncertainty_reason
+require no_completion_without_core_retrieval

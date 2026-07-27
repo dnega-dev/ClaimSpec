@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "run-2025-001",
+    "started_at": "2025-01-15T10:00:00Z",
+    "ended_at": "2025-01-15T10:05:00Z"
+  },
+  "output": {
+    "completion_status": "completed",
+    "text": "The audited total was 42 units in 2024. The reported increase was 12.5%, with recency uncertainty explicitly noted."
+  },
+  "claims": [
+    {
+      "id": "claim-total",
+      "text": "The audited total was 42 units in 2024.",
+      "kind": "factual",
+      "support": "supported",
+      "action": "retained",
+      "citations": [],
+      "risk": "high",
+      "quantitative_values": [
+        "42",
+        "2024"
+      ]
+    },
+    {
+      "id": "claim-increase",
+      "text": "Enrollment increased by 12.5%.",
+      "kind": "factual",
+      "support": "uncertain",
+      "action": "labeled",
+      "citations": [
+        "cite-stat"
+      ],
+      "uncertainty_reason": "The source release may not include later revisions.",
+      "risk": "medium",
+      "quantitative_values": [
+        {
+          "value": "12.5%",
+          "unit": "percent"
+        }
+      ]
+    },
+    {
+      "id": "claim-opinion",
+      "text": "The change appears noteworthy.",
+      "kind": "opinion",
+      "support": "uncertain",
+      "action": "retained",
+      "citations": [],
+      "risk": "low"
+    }
+  ],
+  "citations": [
+    {
+      "id": "cite-stat",
+      "source_id": "source-stat",
+      "locator": "Results"
+    },
+    {
+      "id": "cite-review",
+      "source_id": "source-review",
+      "locator": "paragraph 2"
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-stat",
+      "url": "https://data.example.gov/releases/2025-01",
+      "source_type": "primary",
+      "jurisdiction": "US",
+      "fetched_text": "Official release. The audited total was 42 units in 2024. Enrollment increased by 12.5%.",
+      "access": {
+        "run_id": "run-2025-001",
+        "status": "success",
+        "accessed_at": "2025-01-15T10:01:00Z"
+      }
+    },
+    {
+      "id": "source-review",
+      "url": "https://reports.agency.example/review",
+      "source_type": "secondary",
+      "jurisdiction": "US",
+      "fetched_text": "Independent review confirmed the audited total was 42 units in 2024.",
+      "access": {
+        "run_id": "run-2025-001",
+        "status": "success",
+        "accessed_at": "2025-01-15T10:02:00Z"
+      }
+    }
+  ],
+  "quotes": [
+    {
+      "id": "quote-total",
+      "source_id": "source-stat",
+      "claim_id": "claim-total",
+      "text": "The audited total was 42 units in 2024."
+    }
+  ],
+  "events": [
+    {
+      "id": "event-retrieval",
+      "type": "retrieval",
+      "run_id": "run-2025-001",
+      "status": "success",
+      "occurred_at": "2025-01-15T10:00:30Z",
+      "result_count": 5,
+      "core": true,
+      "query": "official enrollment release"
+    },
+    {
+      "id": "event-contradiction-total",
+      "type": "contradiction_search",
+      "run_id": "run-2025-001",
+      "status": "success",
+      "occurred_at": "2025-01-15T10:03:00Z",
+      "result_count": 2,
+      "claim_id": "claim-total",
+      "query": "evidence contradicting audited total"
+    }
+  ]
+}

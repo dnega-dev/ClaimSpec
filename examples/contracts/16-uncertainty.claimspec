@@ -1,0 +1,7 @@
+claimspec 1.0
+name "explicit-uncertainty"
+description "Requires reasons wherever retained factual support is uncertain"
+
+require uncertainty_reason
+require unsupported_claims_labeled_or_removed
+require factual_claims_cited

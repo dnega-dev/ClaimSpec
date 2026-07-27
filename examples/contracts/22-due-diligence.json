@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "name": "due-diligence-json",
+  "description": "JSON contract for higher-risk due-diligence research",
+  "rules": [
+    {"name": "min_sources", "count": 3, "cited_only": true},
+    {"name": "min_primary_sources", "count": 2, "cited_only": true},
+    {"name": "factual_claims_cited"},
+    {"name": "citations_resolve"},
+    {"name": "quantitative_values_in_evidence"},
+    {"name": "sources_accessed_current_run"},
+    {"name": "retrieval_results", "min_count": 3},
+    {"name": "unsupported_claims_labeled_or_removed"},
+    {"name": "uncertainty_reason"},
+    {"name": "contradiction_search_high_risk"},
+    {"name": "no_completion_without_core_retrieval", "min_count": 2}
+  ]
+}

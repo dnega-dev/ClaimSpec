@@ -1,0 +1,7 @@
+claimspec 1.0
+name "jurisdiction-policy"
+description "Requires explicit allowed jurisdiction metadata"
+
+require citations_resolve
+require jurisdiction_allowlist allow=US,CA,EU
+require sources_accessed_current_run

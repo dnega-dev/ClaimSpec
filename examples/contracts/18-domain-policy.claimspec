@@ -1,0 +1,7 @@
+claimspec 1.0
+name "domain-policy"
+description "Allows exact hosts and their subdomains, but not lookalikes"
+
+require citations_resolve
+require source_domain_allowlist allow=example.gov,agency.example
+require sources_accessed_current_run

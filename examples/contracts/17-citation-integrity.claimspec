@@ -1,0 +1,7 @@
+claimspec 1.0
+name "citation-integrity"
+description "Checks citation declaration and referential integrity"
+
+require factual_claims_cited
+require citations_resolve
+require sources_accessed_current_run

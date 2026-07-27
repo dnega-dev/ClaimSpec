@@ -1,0 +1,14 @@
+claimspec 1.0
+name "health-guidance"
+description "Primary-source and contradiction-search checks for health claims"
+
+require min_sources count=3 cited_only=true
+require min_primary_sources count=2 cited_only=true
+require factual_claims_cited
+require citations_resolve
+require quantitative_values_in_evidence
+require sources_accessed_current_run
+require source_domain_allowlist allow=who.int,nih.gov,cdc.gov
+require contradiction_search_high_risk
+require uncertainty_reason
+require no_completion_without_core_retrieval
