@@ -9,3 +9,4 @@ dist/
 .claimspec-schemas.*/
 *.xml
 *.sarif
+wheelhouse/

@@ -1,10 +1,15 @@
 import copy
+import json
 import unittest
+from pathlib import Path
 
 from claimspec.errors import TraceValidationError
 from claimspec.schema import get_schema, validate_trace
 
 from common import trace_fixture
+
+ROOT = Path(__file__).resolve().parents[1]
+SCHEMAS = ROOT / "schemas"
 
 
 class TraceSchemaTests(unittest.TestCase):
@@ -69,6 +74,13 @@ class TraceSchemaTests(unittest.TestCase):
     def test_unknown_schema_kind_is_rejected(self):
         with self.assertRaises(KeyError):
             get_schema("unknown")
+
+    def test_committed_schemas_match_published_schema_api(self):
+        for kind in ("trace", "contract", "result"):
+            with self.subTest(kind=kind):
+                expected = (SCHEMAS / f"{kind}.schema.json").read_text(encoding="utf-8")
+                actual = json.dumps(get_schema(kind), indent=2, sort_keys=True) + "\n"
+                self.assertEqual(expected, actual)
 
 
 if __name__ == "__main__":
