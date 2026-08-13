@@ -1,5 +1,9 @@
 # ClaimSpec
 
+[![CI](https://github.com/dnega-dev/ClaimSpec/actions/workflows/ci.yml/badge.svg)](https://github.com/dnega-dev/ClaimSpec/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB)](https://www.python.org/)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 ClaimSpec is a zero-runtime-dependency Python 3.9+ language and verifier for **grounding contracts**. A contract states observable requirements for a research-agent run; the verifier checks a JSON trace and emits deterministic text, JSON, JUnit, or SARIF results.
 
 ClaimSpec checks trace consistency and evidence-presence conditions. **A passing check does not establish that a claim is true, that a source is trustworthy, or that a citation logically entails a claim.** In particular, the verifier does not fetch URLs. It evaluates the fetched text, access records, claims, and events supplied in the trace. Use provenance controls and human review where the risk warrants them.
