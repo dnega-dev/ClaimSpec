@@ -25,6 +25,12 @@ classifiers = [
   "Topic :: Software Development :: Quality Assurance",
 ]
 
+[project.urls]
+Homepage = "https://github.com/dnega-dev/ClaimSpec"
+Repository = "https://github.com/dnega-dev/ClaimSpec"
+Issues = "https://github.com/dnega-dev/ClaimSpec/issues"
+Changelog = "https://github.com/dnega-dev/ClaimSpec/blob/main/CHANGELOG.md"
+
 [project.scripts]
 claimspec = "claimspec.cli:main"
 
