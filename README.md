@@ -1,5 +1,9 @@
 # ClaimSpec
 
+[![CI](https://github.com/dnega-dev/ClaimSpec/actions/workflows/ci.yml/badge.svg)](https://github.com/dnega-dev/ClaimSpec/actions/workflows/ci.yml)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-3776AB)](https://www.python.org/)
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
+
 ClaimSpec is a zero-runtime-dependency Python 3.9+ language and verifier for **grounding contracts**. A contract states observable requirements for a research-agent run; the verifier checks a JSON trace and emits deterministic text, JSON, JUnit, or SARIF results.
 
 ClaimSpec checks trace consistency and evidence-presence conditions. **A passing check does not establish that a claim is true, that a source is trustworthy, or that a citation logically entails a claim.** In particular, the verifier does not fetch URLs. It evaluates the fetched text, access records, claims, and events supplied in the trace. Use provenance controls and human review where the risk warrants them.
@@ -178,6 +182,23 @@ ClaimSpec is deliberately local and deterministic:
 - contradiction search is evidenced by an event record, not by an assessment that the search was exhaustive.
 
 These boundaries make ClaimSpec suitable as one enforceable layer in a larger research-quality system, not as a truth oracle.
+
+## Assurance toolkit
+
+This repository is part of a set of small, deterministic tools for testing AI-agent and retrieval-system failure boundaries:
+
+- [SourceAdapter-Fuzz](https://github.com/dnega-dev/SourceAdapter-Fuzz) — fault injection for public-data acquisition strategies.
+- [SourceContract](https://github.com/dnega-dev/SourceContract) — conformance testing for official-source ingestion adapters.
+- [ClaimSpec](https://github.com/dnega-dev/ClaimSpec) — executable grounding contracts for research-agent traces.
+- [CitationChaos](https://github.com/dnega-dev/CitationChaos) — citation mutation testing for grounded-answer pipelines.
+- [AsOfGuard](https://github.com/dnega-dev/AsOfGuard) — temporal-contamination detection for RAG and agent memory.
+- [Legal-MCP-Assurance](https://github.com/dnega-dev/Legal-MCP-Assurance) — black-box assurance for legal and retrieval tool servers.
+- [JurisdictionLeakBench](https://github.com/dnega-dev/JurisdictionLeakBench) — retrieval-scope isolation security benchmark.
+- [MemoryLitmus](https://github.com/dnega-dev/MemoryLitmus) — conformance testing for agent-memory semantics.
+- [FailureKata](https://github.com/dnega-dev/FailureKata) — executable practice from coding-agent transcript failures.
+- [FieldQuarantine](https://github.com/dnega-dev/FieldQuarantine) — safe migration of offline submissions across schema changes.
+
+Each project is independently installable and reports deterministic outcomes suitable for local development and CI.
 
 ## License
 
